@@ -1,1 +1,1 @@
-web: node route/index.js
+web: node
