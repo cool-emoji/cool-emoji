@@ -5,7 +5,12 @@
 {% endblock %}
 
 {% block content %}
-
+<div class="govuk-form-group">
+  {{ govukButton({ text: 'English' }) }}
+  {{ govukButton({ text: 'عربى' }) }}
+  {{ govukButton({ text: 'Español' }) }}
+  {{ govukButton({ text: 'Other' }) }}
+</div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column">
 
