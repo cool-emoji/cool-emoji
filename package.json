@@ -1,7 +1,7 @@
 {
-  "name": "ucm-tracker",
+  "name": "breaking-barriers",
   "version": "1.0.0-SNAPSHOT",
-  "description": "Managed Migration Persistence microservice",
+  "description": "Breaking Barriers",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
