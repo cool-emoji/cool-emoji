@@ -8,6 +8,9 @@ module.exports = (app) => {
   app.get('/food-bank', getController.foodBankIndex);
   app.post('/food-bank/find', postController.findFoodBank);
 
+  app.get('/uncomfortable-stuff', getController.uncomfortableStuffIndex);
+  app.post('/uncomfortable-stuff/capture-details', postController.captureDetails);
+
   app.get('/mental-health', getController.mentalHealthIndex);
   app.get('/mental-health/depression', getController.mentalHealthDepression);
 

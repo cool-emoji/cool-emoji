@@ -3,4 +3,5 @@ const renderManager = require('./renderManager');
 
 module.exports = {
   findFoodBank: [findPostcode, renderManager.renderFoodBank],
+  captureDetails: [renderManager.renderUncomfortableStuff],
 };

@@ -1,0 +1,45 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if errors %}
+
+    {{ govukErrorSummary({
+    titleText: 'There is a problem',
+    errorList: [
+    {
+    'text': errors[0].message,
+    href: '#details'
+    }
+    ]
+    }) }}
+
+    {% endif %}
+
+    <form action='/uncomfortable-stuff/capture-details' method='post' class='form' autocomplete='off' enctype='application/x-www-form-urlencoded'>
+
+      <h1 class="govuk-heading-m">
+        Is there any details that you would like to share with us?
+      </h1>
+
+      {{ govukInput({
+      label: {
+      text: 'Enter some details below:',
+      isPageHeading: false
+      },
+      id: 'details',
+      name: 'details',
+      classes: 'govuk-input--width-20',
+      rows: '8'
+      }) }}
+
+      {{ govukButton({ text: 'Capture' }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
