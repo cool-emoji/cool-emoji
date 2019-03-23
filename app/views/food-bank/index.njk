@@ -21,9 +21,16 @@
 
     {% if foodbanks %}
     {{ govukPanel({
-    titleText: 'Foodbanks found',
-    html: 'Foodbank found'
+    titleText: 'Foodbanks'
     }) }}
+
+    <ul>
+    {% for foodbank in foodbanks %}
+      <li><p>{{ foodbank.foodbank_name }}, {{ foodbank.centre_address }}, {{ foodbank.foodbank_telephone_number }}</p></li>
+    {% else %}
+      <li>No food bank found for the postcode!</li>
+    {% endfor %}
+    </ul>
     {% endif %}
 
     <form action='/food-bank/find' method='post' class='form' autocomplete='off' enctype='application/x-www-form-urlencoded'>

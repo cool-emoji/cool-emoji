@@ -1,22 +1,21 @@
 const rp = require('requestretry');
 
-const apiUrl = 'someBackendUrl';
+const apiUrl = 'http://localhost:8090/food-bank';
 
 class ApiCall {
-  constructor(action, body) {
+  constructor(action, data) {
     this.options = {
-      method: 'POST',
-      uri: `${apiUrl}/${action}`,
+      method: 'GET',
+      uri: `${apiUrl}/${action}/${data}`,
       json: true,
       simple: false,
-      body: body,
       resolveWithFullResponse: true,
       timeout: 180000
     };
   }
 
   call() {
-    console.log(`ApiCall.call() is executing: ${this.options.method} ${this.options.uri} body: ${JSON.stringify(this.options.body)}`);
+    console.log(`ApiCall.call() is executing: ${this.options.method} ${this.options.uri}`);
     return rp(this.options);
   }
 
