@@ -7,6 +7,16 @@ module.exports = async (req, res, next) => {
 
     if (response.statusCode === 200) {
       res.locals.foodbanks = response.body;
+
+      let a = response.body.map(e => {
+          let changed = e.centre_address.replace(/<br \/>/g,'')
+          e.centre_address = changed;
+          return e;
+      });
+
+      res.locals.foodbanks = a;
+
+        console.log(a);
     } else {
       console.log(`Non-200 http response when executing ${req.method} ${req.url}. Response: ${JSON.stringify(response.body)}`);
       res.locals.errors = [{message: 'Something went wrong...'}];
