@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  h1= title
+
+  form(method='POST' action='/uncomfortable-details/submit')
+    label(for='uncomfortableDetails') Please provide them in the textarea below:
+    br
+    textarea(id='uncomfortableDetailsidd')
+    br
+    button(type="submit") Submit
+
+  br

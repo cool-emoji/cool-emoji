@@ -2,5 +2,7 @@ extends ../layout
 
 block content
   h1= title
-  p Please ring #{mental-health-phone-number}.
-  p Also, you could visit https://www.mentalhealth.org.uk/publications/gp-visit-guide for more information.
+  h2
+    p Please ring #{mentalHealthPhoneNumber}
+    p Also, you could visit https://www.mentalhealth.org.uk/publications/gp-visit-guide for more information.
+  a(class='button' href='/') Back

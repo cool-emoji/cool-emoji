@@ -6,11 +6,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/face-to-face-yes', function(req, res) {
-  res.render('mental-health/face-to-face-yes', { 'face-to-face-health-phone-number': '116 123' });
+  res.render('mental-health/face-to-face-yes', { faceToFaceMentalHealthPhoneNumber: 'aNumberToGp' });
 });
 
-router.get('face-to-face-no', function(req, res) {
-  res.render('mental-health/face-to-face-no', { 'mental-health-phone-number': '116 123' });
+router.get('/face-to-face-no', function(req, res) {
+  res.render('mental-health/face-to-face-no', { mentalHealthPhoneNumber: '116 123'});
 });
 
 module.exports = router;
