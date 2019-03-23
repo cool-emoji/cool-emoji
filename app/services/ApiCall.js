@@ -1,6 +1,6 @@
 const rp = require('requestretry');
 
-const apiUrl = 'http://localhost:8090/food-bank';
+const apiUrl = 'https://food-bank-search.herokuapp.com/food-bank';
 
 class ApiCall {
   constructor(action, data) {
