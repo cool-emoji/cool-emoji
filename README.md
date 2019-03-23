@@ -1,4 +1,2 @@
-# Cool Emoji
-
-https://cool-emoji.herokuapp.com/
+# ucm-tracker
 

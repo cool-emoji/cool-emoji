@@ -1,0 +1,51 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if errors %}
+
+    {{ govukErrorSummary({
+    titleText: 'There is a problem',
+    errorList: [
+    {
+    'text': errors[0].message,
+    href: '#postcode'
+    }
+    ]
+    }) }}
+
+    {% endif %}
+
+    {% if foodbanks %}
+    {{ govukPanel({
+    titleText: 'Foodbanks found',
+    html: 'Foodbank found'
+    }) }}
+    {% endif %}
+
+    <form action='/food-bank/find' method='post' class='form' autocomplete='off' enctype='application/x-www-form-urlencoded'>
+
+      <h1 class="govuk-heading-m">
+        Find a food bank
+      </h1>
+
+      {{ govukInput({
+      label: {
+      text: 'Enter Postcode below:',
+      isPageHeading: false
+      },
+      id: 'postcode',
+      name: 'postcode',
+      classes: 'govuk-input--width-20'
+      }) }}
+
+      {{ govukButton({ text: 'Find' }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
