@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const http = require('http');
 const path = require('path');
 
-const PORT = process.env.PORT || '3000';
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.static(path.join(__dirname, '/app/assets')));
